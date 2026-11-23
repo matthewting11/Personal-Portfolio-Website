@@ -1,0 +1,24 @@
+
+.home {
+  background: black;
+  min-height: 100vh;
+  padding: 100px 40px;
+}
+
+.testTitle {
+  color: #efff00;
+  font-size: 80px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.testRectangle {
+  margin-top: 40px;
+  width: 100%;
+  height: 30px;
+  background: linear-gradient(
+    90deg,
+    #efff00,
+    #ff2d8d
+  );
+}
