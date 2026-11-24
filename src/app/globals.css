@@ -204,3 +204,26 @@ a {
     animation: none;
   }
 }
+
+@media (hover: hover) and (pointer: fine) {
+  html,
+  body,
+  body * {
+    cursor: url("/images/Neon Moose Cursor on Black.png") 24 10, auto !important;
+  }
+
+  a,
+  a *,
+   button,
+  button *,
+  [role="button"],
+  [role="button"] * {
+    cursor: url("/images/Neon Gradient Hand Cursor with Moose Emblem.png") 24 10, pointer !important;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .moose-logo-link,
+  .moose-logo-link * {
+    cursor: url("/images/moose-button-cursor.png") 24 10, pointer !important;
+  }
+}

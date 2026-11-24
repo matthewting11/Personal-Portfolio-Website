@@ -104,27 +104,15 @@ export default function Home() {
             }}
           >
 
-          <a
-            href="/"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              textDecoration: "none",
-            }}
-          >
-            <Image
-              src="/images/moose_logo_truly_transparent.png"
-              alt="MT Moose Logo"
-              width={65}
-              height={65}
-              priority
-              style={{
-                width: "65px",
-                height: "65px",
-                objectFit: "contain",
-              }}
-            />
-          </a>
+            <a href="/" aria-label="Go to homepage">
+              <Image
+                src="/images/moose_logo_truly_transparent.png"
+                className="moose-logo-link"
+                alt="Moose logo"
+                width={60}
+                height={60}
+              />
+            </a>
 
         <div
           style={{
@@ -133,10 +121,15 @@ export default function Home() {
             gap: "clamp(12px, 3vw, 35px)",
           }}
         >
+          
           {["ABOUT", "PROJECTS", "CONTACT"].map((item) => (
             <a
               key={item}
-              href={`#${item.toLowerCase()}`}
+              href={
+                item === "PROJECTS"
+                  ? "/projects"
+                  : `#${item.toLowerCase()}`
+              }
               style={{
                 color: "#080808",
                 textDecoration: "none",
@@ -148,6 +141,7 @@ export default function Home() {
               {item}
             </a>
           ))}
+
         </div>
       </nav>
 
@@ -164,7 +158,7 @@ export default function Home() {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    padding: "40px 10% 30px",
+    padding: "20px 10% 20px",
     boxSizing: "border-box",
   }}
 >
@@ -215,7 +209,7 @@ export default function Home() {
           width: "100%",
           maxWidth: "1500px",
           margin: "0 auto",
-          transform: "translateY(-60px)",
+          translate: "0 20px"
         }}
       >
     {/* ==========================
@@ -340,7 +334,7 @@ export default function Home() {
     left: "50px",
     width: "100%",
     height: "min(100vh, 500px)",
-    minHeight: "1000px",
+    minHeight: "800px",
 
     // Keep image away from right edge
     paddingRight: "10px",
@@ -362,39 +356,38 @@ export default function Home() {
     }}
   >
 
-      <Image
-        src="/images/website photo mask(1).png"
-        alt="Personal portfolio hero"
-        fill
-        priority
-        sizes="(max-width: 900px) 90vw, 100vw"
-        style={{
-          objectFit: "contain",
-          objectPosition: "center center",
-          transform: "none",
-        }}
-      />
+              <Image
+          src="/images/website photo mask(1).png"
+          alt="Personal portfolio hero"
+          fill
+          priority
+          style={{
+            objectFit: "contain",
+            objectPosition: "center",
+            transform: "scale(1.6)",
+            filter: "brightness(1.3)",
+          }}
+        />
 
   </div>
 </div>
   </div>
 
-  {/* ==========================
-      SCROLL INDICATOR
-  ========================== */}
-  <div
-    style={{
-      position: "absolute",
-      bottom: "30px",
-      left: "10%",
-      color: "#080808",
-      fontSize: "11px",
-      fontWeight: 700,
-      letterSpacing: "2px",
-    }}
-  >
-    SCROLL TO EXPLORE ↓
-  </div>
+<div
+  style={{
+    position: "absolute",
+    bottom: 0,
+    left: "50%",
+    transform: "translateX(-50%)",
+    width: "100vw",
+    height: "20%",
+    background:
+      "linear-gradient(to top, rgba(0,0,0,0.7) 20%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.1) 75%, transparent 100%)",
+    pointerEvents: "none",
+    zIndex: 1,
+  }}
+/>
+
 </section>
 
 

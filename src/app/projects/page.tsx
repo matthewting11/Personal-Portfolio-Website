@@ -71,51 +71,45 @@ export default function ProjectsPage() {
                   }}
                 >
       
-                <a
-                  href="/"
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    textDecoration: "none",
-                  }}
-                >
+                <a href="/" aria-label="Go to homepage">
                   <Image
                     src="/images/moose_logo_truly_transparent.png"
-                    alt="MT Moose Logo"
-                    width={65}
-                    height={65}
-                    priority
-                    style={{
-                      width: "65px",
-                      height: "65px",
-                      objectFit: "contain",
-                    }}
+                    className="moose-logo-link"
+                    alt="Moose logo"
+                    width={60}
+                    height={60}
                   />
                 </a>
       
-              <div
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: "clamp(12px, 3vw, 35px)",
-                }}
-              >
-                {["ABOUT", "PROJECTS", "CONTACT"].map((item) => (
-                  <a
-                    key={item}
-                    href={`#${item.toLowerCase()}`}
-                    style={{
-                      color: "#080808",
-                      textDecoration: "none",
-                      fontSize: "12px",
-                      fontWeight: 700,
-                      letterSpacing: "2px",
-                    }}
-                  >
-                    {item}
-                  </a>
-                ))}
-              </div>
+
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "clamp(12px, 3vw, 35px)",
+              }}
+            >
+              {["ABOUT", "PROJECTS", "CONTACT"].map((item) => (
+                <a
+                  key={item}
+                  href={
+                    item === "PROJECTS"
+                      ? "/projects"
+                      : `/#${item.toLowerCase()}`
+                  }
+                  style={{
+                    color: "#080808",
+                    textDecoration: "none",
+                    fontSize: "12px",
+                    fontWeight: 700,
+                    letterSpacing: "2px",
+                  }}
+                >
+                  {item}
+                </a>
+              ))}
+            </div>
+
             </nav>
       
 
